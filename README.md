@@ -47,4 +47,4 @@ and as 12-bit DAC on pins 5, 9.
 
 ## Credits
 
-This package is an extension to Thomas Roell's [grumpyoldpizza](https://grumpyoldpizza.github.io/arduino-STM32L4) package, which provides the STM32L4 core.
+This package is an extension to Thomas Roell's [grumpyoldpizza](https://github.com/GrumpyOldPizza/arduino-STM32L4) package, which provides the STM32L4 core.
