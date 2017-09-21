@@ -5,14 +5,14 @@ menu.opt=Optimize
 
 # MyStorm BlackIce
 
-BlackIce.name=BlackIce
+BlackIce.name=MyStorm BlackIce
 BlackIce.vid.0=0x0483
 BlackIce.pid.0=0xdf11
 
 BlackIce.upload.tool=dfu-util
 BlackIce.upload.protocol=dfuse
 
-BlackIce.build.variant=STM32L433RC-BlackIce
+BlackIce.build.variant=BlackIce
 BlackIce.build.board=STM32L4_BLACKICE
 BlackIce.build.core=grumpyoldpizza:stm32l4
 BlackIce.build.vid=0x0483
