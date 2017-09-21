@@ -1,0 +1,28 @@
+# These definitions are specific to MyStorm
+# Everything not specified here is taken from platform.txt in grumpyoldpizza:stm32l4
+# The purpose of these overrides is to use 
+
+compiler.elf2hex.extra_flags=
+compiler.elf2hex.flags=-O binary
+compiler.elf2hex.flags2=-O ihex
+
+recipe.objcopy.dfu.pattern=
+recipe.hooks.objcopy.postobjcopy.1.pattern=
+recipe.hooks.objcopy.postobjcopy.2.pattern=
+
+## Create bin
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+
+## Create hex
+recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.flags2} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+
+#
+# Program STM32 flash via DFU
+#
+tools.dfu-util.path={runtime.tools.dfu-util.path}
+tools.dfu-util.cmd=dfu-util
+tools.dfu-util.cmd.windows=dfu-util.cmd
+tools.dfu-util.upload.params.verbose=-v
+tools.dfu-util.upload.params.quiet=
+tools.dfu-util.upload.pattern="{path}/{cmd}" -d 0483:df11 -a 0 -s 0x08000000:leave -t 1024 -D "{build.path}/{build.project_name}.bin"
+

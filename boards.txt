@@ -1,0 +1,58 @@
+menu.usb=USB Type
+menu.dosfs=DOSFS
+menu.speed=CPU Speed
+menu.opt=Optimize
+
+# MyStorm BlackIce
+
+BlackIce.name=BlackIce
+BlackIce.vid.0=0x0483
+BlackIce.pid.0=0xdf11
+
+BlackIce.upload.tool=dfu-util
+BlackIce.upload.protocol=dfuse
+
+BlackIce.build.variant=STM32L433RC-BlackIce
+BlackIce.build.board=STM32L4_BLACKICE
+BlackIce.build.core=grumpyoldpizza:stm32l4
+BlackIce.build.vid=0x0483
+BlackIce.build.pid=0xdf11
+BlackIce.build.usb_manufacturer=u"\0324MyStorm"
+BlackIce.build.usb_product=u"\0314BlackIce"
+
+BlackIce.build.mcu=cortex-m4
+BlackIce.build.f_cpu=80000000L
+BlackIce.build.arch=STM32L4
+BlackIce.build.did=0xffff
+BlackIce.build.extra_flags=-DSTM32L433xx -D__FPU_PRESENT=1 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs -mslow-flash-data -fsingle-precision-constant {build.usb_flags} {build.dosfs_flags}
+BlackIce.build.ldscript=linker_scripts/STM32L433RC_FLASH.ld
+BlackIce.build.openocdscript=openocd_scripts/s
+BlackIce.build.variant_system_libs="-L{build.system.path}/STM32L4xx/Lib" "-L{build.system.path}/CMSIS/Lib" -lstm32l433 -larm_cortexM4lf_math
+BlackIce.build.variant_system_include="-I{build.system.path}/CMSIS/Include" "-I{build.system.path}/CMSIS/Device/ST/STM32L4xx/Include" "-I{build.system.path}/STM32L4xx/Include" 
+
+BlackIce.menu.usb.cdc=Serial
+BlackIce.menu.usb.cdc.build.usb_type=USB_TYPE_CDC
+BlackIce.menu.usb.cdc_msc=Serial + Mass Storage
+BlackIce.menu.usb.cdc_msc.build.usb_type=USB_TYPE_CDC_MSC
+BlackIce.menu.usb.none=No USB
+BlackIce.menu.usb.none.build.usb_type=USB_TYPE_NONE
+
+BlackIce.menu.dosfs.none=None
+BlackIce.menu.dosfs.none.build.dosfs_sdcard=0
+BlackIce.menu.dosfs.none.build.dosfs_sflash=0
+BlackIce.menu.dosfs.sdspi=SDCARD (SPI)
+BlackIce.menu.dosfs.sdspi.build.dosfs_sdcard=1
+BlackIce.menu.dosfs.sdspi.build.dosfs_sflash=0
+
+BlackIce.menu.opt.os=Smallest Code
+BlackIce.menu.opt.os.build.flags.optimize=-Os
+BlackIce.menu.opt.os.build.flags.ldspecs=--specs=nano.specs
+BlackIce.menu.opt.o1=Fast
+BlackIce.menu.opt.o1.build.flags.optimize=-O1
+BlackIce.menu.opt.o1.build.flags.ldspecs=
+BlackIce.menu.opt.o2=Faster
+BlackIce.menu.opt.o2.build.flags.optimize=-O2
+BlackIce.menu.opt.o2.build.flags.ldspecs=
+BlackIce.menu.opt.o3=Fastest
+BlackIce.menu.opt.o3.build.flags.optimize=-O3
+BlackIce.menu.opt.o3.build.flags.ldspecs=
