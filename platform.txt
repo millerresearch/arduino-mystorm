@@ -3,7 +3,7 @@
 # The purpose of these overrides is to use 
 
 name=myStorm Boards (STM32L4 + ICE40)
-version=0.0.2
+version=0.0.3
 
 compiler.elf2hex.extra_flags=
 compiler.elf2hex.flags=-O binary
