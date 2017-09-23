@@ -1,4 +1,4 @@
-# Arduino board support for MyStorm BlackIce (STM32L4 + ICE40 FPGA)
+# Arduino board support for myStorm BlackIce (STM32L4 + ICE40 FPGA)
 
 ### Pin assignments
 
@@ -8,12 +8,14 @@
 | 8-13            | DIGITAL2 1-6   |
 | 14-19 (AN0-AN5) | ANALOG 1-7     |
 | 20-23           | DIGITAL3 1-4   |
-| *also*          | Switches (S1,S2) |
+| *also*          | Switches (S2,S1) |
 | 24-25 (SDA,SCL) | DIGITAL2 9-10  |
+| 26-29           | LEDs 1-4       |
+| *also*          | ICE40 (SS,MISO,MOSI,SCK) |
 | 40-41           | SPI Mux (S,OE) |
-| 42-44           | ICE40 (SS,CRST,DONE) |
-| 45-46           | Buttons (B1,B2) |
-| 47              | LED (SL1)      |
+| 42-43           | ICE40 (CRST,DONE) |
+| 44-45           | Buttons (S3,S4) |
+| 46              | LED5 (SL1)      |
 
 AnalogWrite is supported as PWM on pins 3, 4, 6, 11, 12, 18 19,
 and as 12-bit DAC on pins 5, 9.

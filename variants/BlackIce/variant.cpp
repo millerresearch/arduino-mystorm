@@ -63,7 +63,8 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA0),  GPIO_PIN_PA0_TIM2_CH1,   (PIN_ATTR_ADC | PIN_ATTR_PWM | PIN_ATTR_EXTI | PIN_ATTR_WKUP1),  PWM_INSTANCE_TIM2,  PWM_CHANNEL_1, ADC_INPUT_5    },
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA1),  GPIO_PIN_PA1_TIM2_CH2,    (PIN_ATTR_ADC | PIN_ATTR_PWM | PIN_ATTR_EXTI),    PWM_INSTANCE_TIM2,  PWM_CHANNEL_2,    ADC_INPUT_6    },
 
-	// 20..23 - Extra digital pins (DIG16..DIG19 on schematic)
+
+	// 20..23 - Extra digital pins (DIG16..DIG19 on schematic), also switches S2 (1,2) S1 (1,2), also SD card
     { GPIOD, GPIO_PIN_MASK(GPIO_PIN_PD2),   GPIO_PIN_PD2,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC10),  GPIO_PIN_PC10,            (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC11),  GPIO_PIN_PC11,            (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
@@ -73,13 +74,13 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB9),  GPIO_PIN_PB9,             (PIN_ATTR_EXTI),                                  PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB8),  GPIO_PIN_PB8_TIM16_CH1,   (PIN_ATTR_PWM | PIN_ATTR_EXTI),                   PWM_INSTANCE_TIM16,  PWM_CHANNEL_1,   ADC_INPUT_NONE },
 
-    // 26..28 - SPI/ICSP pins (MISO,SCK,MOSI) to ICE40
+	// 26..29 - SPI pins (SS,MISO,MOSI,SCK) to ICE40 for bitstream configuration, also LED 1-4 if selected by MUX
+    { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA15), GPIO_PIN_PA15,            0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB4),  GPIO_PIN_PB4,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB3),  GPIO_PIN_PB3,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB5),  GPIO_PIN_PB5,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB3),  GPIO_PIN_PB3,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
-    // 29..31 - USB (VBUS,DM,DP)
-    { NULL,  0,                            GPIO_PIN_NONE,            0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    // 30..31 - USB (DM,DP)
     { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA11), GPIO_PIN_PA11,            0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA12), GPIO_PIN_PA12,            0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
@@ -99,12 +100,11 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC14), GPIO_PIN_PC14,         0,                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC15), GPIO_PIN_PC15,         0,                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
-    // 42..44 - ICE40 Boot (SS,CRST,CDONE)
-    { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA15), GPIO_PIN_PA15,            0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    // 42..43 - ICE40 Configuration (CRST,CDONE)
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB6),  GPIO_PIN_PB6,             0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB7),  GPIO_PIN_PB7,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
-    // 45..47 - Buttons & Status LED (B1,B2,SL1)
+    // 44..46 - Buttons & Status LED (B1,B2,SL1)
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC8), GPIO_PIN_PC8,           (PIN_ATTR_EXTI),                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC9), GPIO_PIN_PC9,           (PIN_ATTR_EXTI),                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC13), GPIO_PIN_PC13,         0,                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
@@ -163,8 +163,9 @@ initVariant()
 	pinMode(PIN_MUX_OE, OUTPUT);
 	pinMode(PIN_MUX_S, OUTPUT);
 	pinMode(PIN_ICE40_CRST, OUTPUT);
-	pinMode(PIN_ICE40_CDONE, INPUT);
-	digitalWrite(PIN_MUX_OE, 1);
+	// SPI MUX enabled, connect LEDs
+	digitalWrite(PIN_MUX_OE, 0);
 	digitalWrite(PIN_MUX_S, 0);
-	digitalWrite(PIN_ICE40_CRST, 1);
+	// keep ICE40 in reset until configured
+	digitalWrite(PIN_ICE40_CRST, 0);
 }

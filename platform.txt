@@ -1,8 +1,8 @@
-# These definitions are specific to MyStorm
+# These definitions are specific to myStorm
 # Everything not specified here is taken from platform.txt in grumpyoldpizza:stm32l4
 # The purpose of these overrides is to use 
 
-name=MyStorm Boards (STM32L4 + ICE40)
+name=myStorm Boards (STM32L4 + ICE40)
 version=0.0.2
 
 compiler.elf2hex.extra_flags=

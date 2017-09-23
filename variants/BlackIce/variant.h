@@ -65,15 +65,15 @@ extern "C"
  *----------------------------------------------------------------------------*/
 
 // Number of pins defined in PinDescription array
-#define PINS_COUNT           (29u)
-#define NUM_DIGITAL_PINS     (24u)
-#define NUM_TOTAL_PINS       (48u)
+#define PINS_COUNT           (30u)
+#define NUM_DIGITAL_PINS     (26u)
+#define NUM_TOTAL_PINS       (47u)
 #define NUM_ANALOG_INPUTS    (6u)
 #define NUM_ANALOG_OUTPUTS   (2u)
 #define analogInputToDigitalPin(p)  ((p < 6u) ? (p) + 14u : -1)
 
 // LEDs
-#define LED_BUILTIN          (47u)
+#define LED_BUILTIN          (46u)
 
 /*
  * Analog pins
@@ -100,8 +100,8 @@ static const uint8_t DAC1 = PIN_DAC1;
 
 // Other pins
 
-#define PIN_BUTTON1           (45u)
-#define PIN_BUTTON2           (46u)
+#define PIN_BUTTON1           (44u)
+#define PIN_BUTTON2           (45u)
 static const uint8_t BUTTON1 = PIN_BUTTON1;
 static const uint8_t BUTTON2 = PIN_BUTTON2;
 #define PIN_BUTTON	PIN_BUTTON1
@@ -125,14 +125,15 @@ static const uint8_t BUTTON = PIN_BUTTON;
  */
 #define SPI_INTERFACES_COUNT 2
 
-#define PIN_SPI_MISO         (26u)
+#define PIN_SPI_SS           (26u)
+#define PIN_SPI_MISO         (27u)
 #define PIN_SPI_MOSI         (28u)
-#define PIN_SPI_SCK          (27u)
-#define PIN_SPI1_MISO        (21u)
-#define PIN_SPI1_MOSI        (20u)
-#define PIN_SPI1_SCK         (22u)
+#define PIN_SPI_SCK          (29u)
+#define PIN_SPI1_MISO        (18u)
+#define PIN_SPI1_MOSI        (19u)
+#define PIN_SPI1_SCK         (17u)
 
-static const uint8_t SS	  = 42;
+static const uint8_t SS	  = PIN_SPI_SS;
 static const uint8_t MOSI = PIN_SPI_MOSI;
 static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;
@@ -146,7 +147,7 @@ static const uint8_t SCK  = PIN_SPI_SCK;
 #define PIN_WIRE_SCL         (25u)
 #define PIN_WIRE1_SDA        (12u)
 #define PIN_WIRE1_SCL        (13u)
-#define PIN_WIRE2_SDA        (26u)
+#define PIN_WIRE2_SDA        (27u)
 #define PIN_WIRE2_SCL        (38u)
 
 static const uint8_t SDA = PIN_WIRE_SDA;
@@ -165,7 +166,6 @@ static const uint8_t SCL = PIN_WIRE_SCL;
 /*
  * USB
  */
-//#define PIN_USB_VBUS         (29u)
 #define PIN_USB_DM           (30u)
 #define PIN_USB_DP           (31u)
 
@@ -216,8 +216,8 @@ extern Uart Serial3;
 // BlackIce specific pin assignments
 #define PIN_MUX_S	(40u)
 #define PIN_MUX_OE	(41u)
-#define PIN_ICE40_CRST	(43u)
-#define PIN_ICE40_CDONE	(44u)
+#define PIN_ICE40_CRST	(42u)
+#define PIN_ICE40_CDONE	(43u)
 
 
 #endif /* _VARIANT_BLACKICE_STM32L433RC_ */

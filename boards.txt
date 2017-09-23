@@ -3,9 +3,9 @@ menu.dosfs=DOSFS
 menu.speed=CPU Speed
 menu.opt=Optimize
 
-# MyStorm BlackIce
+# myStorm BlackIce
 
-BlackIce.name=MyStorm BlackIce
+BlackIce.name=myStorm BlackIce
 BlackIce.vid.0=0x0483
 BlackIce.pid.0=0xdf11
 
@@ -17,7 +17,7 @@ BlackIce.build.board=STM32L4_BLACKICE
 BlackIce.build.core=grumpyoldpizza:stm32l4
 BlackIce.build.vid=0x0483
 BlackIce.build.pid=0xdf11
-BlackIce.build.usb_manufacturer=u"\0324MyStorm"
+BlackIce.build.usb_manufacturer=u"\0324myStorm"
 BlackIce.build.usb_product=u"\0314BlackIce"
 
 BlackIce.build.mcu=cortex-m4
