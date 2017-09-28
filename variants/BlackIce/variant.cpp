@@ -64,7 +64,7 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA1),  GPIO_PIN_PA1_TIM2_CH2,    (PIN_ATTR_ADC | PIN_ATTR_PWM | PIN_ATTR_EXTI),    PWM_INSTANCE_TIM2,  PWM_CHANNEL_2,    ADC_INPUT_6    },
 
 
-	// 20..23 - Extra digital pins (DIG16..DIG19 on schematic), also switches S2 (1,2) S1 (1,2), also SD card
+	// 20..23 - Extra digital pins (DIG16..DIG19 on schematic), also switches S2 (1,2) S1 (1,2), also SD card, also SPI2(SS,SCK,MISO,MOSI)
     { GPIOD, GPIO_PIN_MASK(GPIO_PIN_PD2),   GPIO_PIN_PD2,             (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC10),  GPIO_PIN_PC10,            (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC11),  GPIO_PIN_PC11,            (PIN_ATTR_EXTI),                                 PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
@@ -89,12 +89,12 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA10), GPIO_PIN_PA10,           (PIN_ATTR_EXTI),                                  PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
     // 34..39 QSPI pins (NCS,CK,IO0,IO1,IO2,IO3)
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA2),  GPIO_PIN_PA2,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA3),  GPIO_PIN_PA3,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PB1),  GPIO_PIN_PB1,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PB0),  GPIO_PIN_PB0,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA7),  GPIO_PIN_PA7,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
-    { NULL,  GPIO_PIN_MASK(GPIO_PIN_PA6),  GPIO_PIN_PA6,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOA,  GPIO_PIN_MASK(GPIO_PIN_PA2),  GPIO_PIN_PA2,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOA,  GPIO_PIN_MASK(GPIO_PIN_PA3),  GPIO_PIN_PA3,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOB,  GPIO_PIN_MASK(GPIO_PIN_PB1),  GPIO_PIN_PB1,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOB,  GPIO_PIN_MASK(GPIO_PIN_PB0),  GPIO_PIN_PB0,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOA,  GPIO_PIN_MASK(GPIO_PIN_PA7),  GPIO_PIN_PA7,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
+    { GPIOA,  GPIO_PIN_MASK(GPIO_PIN_PA6),  GPIO_PIN_PA6,            0,                                                PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
 
     // 40..41 - SPI Mux (S,OE)
     { GPIOC, GPIO_PIN_MASK(GPIO_PIN_PC14), GPIO_PIN_PC14,         0,                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
@@ -133,9 +133,13 @@ extern const stm32l4_spi_pins_t g_SPIPins = { GPIO_PIN_PB5_SPI1_MOSI, GPIO_PIN_P
 extern const unsigned int g_SPIInstance = SPI_INSTANCE_SPI1;
 extern const unsigned int g_SPIMode = SPI_MODE_RX_DMA | SPI_MODE_TX_DMA | SPI_MODE_RX_DMA_SECONDARY | SPI_MODE_TX_DMA_SECONDARY;
 
-extern const stm32l4_spi_pins_t g_SPI1Pins = { GPIO_PIN_PC12_SPI3_MOSI, GPIO_PIN_PC11_SPI3_MISO, GPIO_PIN_PC10_SPI3_SCK, GPIO_PIN_NONE };
-extern const unsigned int g_SPI1Instance = SPI_INSTANCE_SPI3;
+extern const stm32l4_spi_pins_t g_SPI1Pins = { GPIO_PIN_PB15_SPI2_MOSI, GPIO_PIN_PB14_SPI2_MISO, GPIO_PIN_PB13_SPI2_SCK, GPIO_PIN_NONE };
+extern const unsigned int g_SPI1Instance = SPI_INSTANCE_SPI2;
 extern const unsigned int g_SPI1Mode = SPI_MODE_RX_DMA | SPI_MODE_TX_DMA | SPI_MODE_RX_DMA_SECONDARY | SPI_MODE_TX_DMA_SECONDARY;
+
+extern const stm32l4_spi_pins_t g_SPI2Pins = { GPIO_PIN_PC12_SPI3_MOSI, GPIO_PIN_PC11_SPI3_MISO, GPIO_PIN_PC10_SPI3_SCK, GPIO_PIN_NONE };
+extern const unsigned int g_SPI2Instance = SPI_INSTANCE_SPI3;
+extern const unsigned int g_SPI2Mode = SPI_MODE_RX_DMA | SPI_MODE_TX_DMA | SPI_MODE_RX_DMA_SECONDARY | SPI_MODE_TX_DMA_SECONDARY;
 
 extern const stm32l4_i2c_pins_t g_WirePins = { GPIO_PIN_PB8_I2C1_SCL, GPIO_PIN_PB9_I2C1_SDA };
 extern const unsigned int g_WireInstance = I2C_INSTANCE_I2C1;
@@ -164,7 +168,7 @@ initVariant()
 	pinMode(PIN_MUX_S, OUTPUT);
 	pinMode(PIN_ICE40_CRST, OUTPUT);
 	// SPI MUX enabled, connect LEDs
-	digitalWrite(PIN_MUX_OE, 0);
+	digitalWrite(PIN_MUX_OE, 1);
 	digitalWrite(PIN_MUX_S, 0);
 	// keep ICE40 in reset until configured
 	digitalWrite(PIN_ICE40_CRST, 0);
