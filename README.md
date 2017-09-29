@@ -45,7 +45,7 @@ and as 12-bit DAC on pins 5, 9.
 
 Note: SPI pins are shared with onboard LEDs and PMOD14 (if mux OE=S=0).
 SPI2 pins are shared with onboard Switches S1-S2, and SD card.
-`
+
 ### I2C
 
 | Name      | Connections SCL,SDA |

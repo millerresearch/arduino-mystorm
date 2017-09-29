@@ -168,7 +168,7 @@ initVariant()
 	pinMode(PIN_MUX_S, OUTPUT);
 	pinMode(PIN_ICE40_CRST, OUTPUT);
 	// SPI MUX enabled, connect LEDs
-	digitalWrite(PIN_MUX_OE, 1);
+	digitalWrite(PIN_MUX_OE, 0);
 	digitalWrite(PIN_MUX_S, 0);
 	// keep ICE40 in reset until configured
 	digitalWrite(PIN_ICE40_CRST, 0);
