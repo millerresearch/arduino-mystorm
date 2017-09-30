@@ -26,6 +26,11 @@
  * WITH THE SOFTWARE.
  */
 
+/*
+ * Modified for myStorm Blackice by
+ *   Richard Miller, 2017.
+ */
+
 #ifndef _VARIANT_BLACKICE_STM32L433RC_
 #define _VARIANT_BLACKICE_STM32L433RC_
 

@@ -26,6 +26,12 @@
  * WITH THE SOFTWARE.
  */
 
+/*
+ * Modified version for myStorm Blackice:
+ * Copyright (c) 2017 Richard Miller.
+ * License as above
+ */
+
 #include "Arduino.h"
 #include "stm32l4_wiring_private.h"
 
