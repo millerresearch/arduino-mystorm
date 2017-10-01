@@ -40,9 +40,12 @@ BlackIce.menu.usb.none.build.usb_type=USB_TYPE_NONE
 BlackIce.menu.dosfs.none=None
 BlackIce.menu.dosfs.none.build.dosfs_sdcard=0
 BlackIce.menu.dosfs.none.build.dosfs_sflash=0
-BlackIce.menu.dosfs.sdspi=SDCARD (SPI)
-BlackIce.menu.dosfs.sdspi.build.dosfs_sdcard=1
-BlackIce.menu.dosfs.sdspi.build.dosfs_sflash=0
+BlackIce.menu.dosfs.sdmmc=SDCARD (SDMMC)
+BlackIce.menu.dosfs.sdmmc.build.dosfs_sdcard=2
+BlackIce.menu.dosfs.sdmmc.build.dosfs_sflash=0
+BlackIce.menu.dosfs.sdmmc1=SDCARD (SDMMC - High Speed)
+BlackIce.menu.dosfs.sdmmc1.build.dosfs_sdcard=3
+BlackIce.menu.dosfs.sdmmc1.build.dosfs_sflash=0
 
 BlackIce.menu.opt.os=Smallest Code
 BlackIce.menu.opt.os.build.flags.optimize=-Os
