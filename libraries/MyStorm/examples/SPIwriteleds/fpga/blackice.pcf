@@ -1,0 +1,16 @@
+# 100Mhz clock
+set_io CLK100 129
+
+# onboard LEDs
+set_io LEDS[1] 71
+set_io LEDS[2] 67
+set_io LEDS[3] 68
+set_io LEDS[4] 70
+
+# SPI2 (shared with switches S1-S2: must be in OFF position)
+set_io SPI_SCK  39
+set_io SPI_MISO 38
+set_io SPI_MOSI 37
+set_io SPI_SS   41
+
+

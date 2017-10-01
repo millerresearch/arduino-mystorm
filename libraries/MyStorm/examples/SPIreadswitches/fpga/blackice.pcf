@@ -1,0 +1,14 @@
+# 100Mhz clock
+set_io CLK100 129
+
+# onboard switches
+set_io SWITCH[0] 37
+set_io SWITCH[1] 38
+set_io SWITCH[2] 39
+set_io SWITCH[3] 41
+
+# SPI (shared with LEDS if mux S=OE=0)
+set_io SPI_SCK  70
+set_io SPI_MISO 67
+set_io SPI_MOSI 68
+set_io SPI_SS   71
