@@ -10,10 +10,10 @@ class MyStorm {
     MyStorm();
     // Configure the FPGA with a bitstream from a compiled-in array
     //   or an address in flash memory
-    bool FPGAConfig(const byte *bitstream, int bitstreamLength);
+    bool FPGAConfigure(const byte *bitstream, int bitstreamLength);
     // Configure the FPGA with a bitstream from a Serial input stream
     //   (eg a UART or a file on SD card)
-    bool FPGAConfig(Stream &str);
+    bool FPGAConfigure(Stream &str);
     // Disable output of SPI multiplexor to prevent interference
     //   with SPI channel to FPGA
     void muxDisable(void);

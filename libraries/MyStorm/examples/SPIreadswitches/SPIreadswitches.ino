@@ -26,7 +26,7 @@ void setup() {
   // wait for serial monitor to be connected (only needed for USB)
   while (!Serial) ;
   // configure the FPGA
-  configured = myStorm.FPGAConfig(bitstream, sizeof bitstream);
+  configured = myStorm.FPGAConfigure(bitstream, sizeof bitstream);
   if (configured) {
     // disable other connections multiplexed to the SPI bus
     myStorm.muxDisable();

@@ -30,7 +30,7 @@ void setup() {
   pinMode(PIN_SPI2_SS, OUTPUT);
   digitalWrite(PIN_SPI2_SS, 1);
   // configure the FPGA
-  configured = myStorm.FPGAConfig(bitstream, sizeof bitstream);
+  configured = myStorm.FPGAConfigure(bitstream, sizeof bitstream);
 }
 
 void loop() {

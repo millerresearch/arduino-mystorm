@@ -10,7 +10,7 @@ void setup()
   Serial.begin(9600);
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, 1);
-  myStorm.FPGAConfig((const byte*)0x0801F000, 135100);
+  myStorm.FPGAConfigure((const byte*)0x0801F000, 135100);
   digitalWrite(LED_BUILTIN, 0);
 }
 
@@ -19,7 +19,7 @@ void loop()
   if (!Serial.available())
     return;
   digitalWrite(LED_BUILTIN, 1);
-  if (myStorm.FPGAConfig(Serial)) {
+  if (myStorm.FPGAConfigure(Serial)) {
     while (Serial.available())
       Serial.read();
   }

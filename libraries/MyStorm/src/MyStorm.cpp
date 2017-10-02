@@ -83,7 +83,7 @@ void MyStorm::muxSelectPi(void)
 }
 
 // This class is used only for its destructor, to clean up
-//   on return from FPGAConfig whether successful or not
+//   on return from FPGAConfigure whether successful or not
 class OnExit {
   public: ~OnExit() {
     SPI.endTransaction();
@@ -94,7 +94,7 @@ class OnExit {
 
 // Configure the ICE40 with a bitstream read from an Arduino stream
 // returns true iff successful
-bool MyStorm::FPGAConfig(Stream &str)
+bool MyStorm::FPGAConfigure(Stream &str)
 {
   static byte buf[64];
   int nbytes, lastread;
@@ -147,7 +147,7 @@ bool MyStorm::FPGAConfig(Stream &str)
 
 // Configure the ICE40 with a bitstream from memory or flash
 // returns true iff successful
-bool MyStorm::FPGAConfig(const byte *bitstream, int bitstreamLength)
+bool MyStorm::FPGAConfigure(const byte *bitstream, int bitstreamLength)
 {
   // skip optional comment header FF 00 ... comments ... 00 FF
   if (bitstreamLength >= 4 && bitstream[0] == 0xFF && bitstream[1] == 0x00) {
@@ -170,7 +170,7 @@ bool MyStorm::FPGAConfig(const byte *bitstream, int bitstreamLength)
       return false;
   }
   MemStream m = MemStream(bitstream, bitstreamLength);
-  return FPGAConfig(m);
+  return FPGAConfigure(m);
 }
 
 // Constructor
