@@ -2,7 +2,7 @@
 # Everything not specified here is taken from platform.txt in grumpyoldpizza:stm32l4
 
 name=myStorm Boards (STM32L4 + ICE40)
-version=0.1.0
+version=0.1.1
 
 compiler.elf2hex.extra_flags=
 compiler.elf2hex.flags=-O binary
