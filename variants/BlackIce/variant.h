@@ -147,6 +147,11 @@ static const uint8_t MISO = PIN_SPI_MISO;
 static const uint8_t SCK  = PIN_SPI_SCK;
 
 /*
+ * QSPI Interface
+ */
+#define QSPI_INTERFACES_COUNT 1
+
+/*
  * Wire Interfaces
  */
 #define WIRE_INTERFACES_COUNT 3

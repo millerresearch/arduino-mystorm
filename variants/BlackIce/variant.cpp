@@ -34,6 +34,7 @@
 
 #include "Arduino.h"
 #include "stm32l4_wiring_private.h"
+#include "stm32l4_qspi.h"
 
 #define PWM_INSTANCE_TIM1      0
 #define PWM_INSTANCE_TIM2      1
@@ -162,6 +163,10 @@ extern const unsigned int g_Wire2Mode = 0;
 extern const stm32l4_sai_pins_t g_SAIPins = { GPIO_PIN_PB13_SAI1_SCK_A, GPIO_PIN_PB12_SAI1_FS_A, GPIO_PIN_PB15_SAI1_SD_A, GPIO_PIN_PB14_SAI1_MCLK_A };
 extern const unsigned int g_SAIInstance = SAI_INSTANCE_SAI1A;
 extern const unsigned int g_SAIMode = SAI_MODE_DMA | SAI_MODE_DMA_SECONDARY;
+
+extern const stm32l4_qspi_pins_t g_QSPIPins = { GPIO_PIN_PA3_QUADSPI_CLK, GPIO_PIN_PA2_QUADSPI_BK1_NCS, GPIO_PIN_PB1_QUADSPI_BK1_IO0, GPIO_PIN_PB0_QUADSPI_BK1_IO1, GPIO_PIN_PA7_QUADSPI_BK1_IO2, GPIO_PIN_PA6_QUADSPI_BK1_IO3};
+extern const unsigned int g_QSPIInstance = QSPI_INSTANCE_QUADSPI;
+extern const unsigned int g_QSPIMode = QSPI_MODE_DMA;
 
 /*
  * BlackIce specific initialisation
