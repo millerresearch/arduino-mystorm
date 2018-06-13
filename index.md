@@ -1,6 +1,6 @@
 # Arduino support for MyStorm BlackIce
 
-Patched dfu-util built from https://github.com/mystorm-org/dfu-util
+Patched dfu-util built from [https://github.com/mystorm-org/dfu-util]
 
 |Linux (32-bit) | dfu-util-0.9.0-mystorm-linux32.tar.bz2 |
 |Linux (64-bit) | dfu-util-0.9.0-mystorm-linux64.tar.bz2 |
