@@ -2,6 +2,7 @@ menu.usb=USB Type
 menu.dosfs=DOSFS
 menu.speed=CPU Speed
 menu.opt=Optimize
+menu.dfusize=DFU transfer size
 
 # myStorm BlackIce
 
@@ -59,3 +60,12 @@ BlackIce.menu.opt.o2.build.flags.ldspecs=
 BlackIce.menu.opt.o3=Fastest
 BlackIce.menu.opt.o3.build.flags.optimize=-O3
 BlackIce.menu.opt.o3.build.flags.ldspecs=
+
+BlackIce.menu.dfusize.4096=4096 (BlackIce II)
+BlackIce.menu.dfusize.4096.upload.xfer=4096
+BlackIce.menu.dfusize.2048=2048
+BlackIce.menu.dfusize.2048.upload.xfer=2048
+BlackIce.menu.dfusize.1920=1920 (BlackIce)
+BlackIce.menu.dfusize.1920.upload.xfer=1920
+BlackIce.menu.dfusize.1024=1024
+BlackIce.menu.dfusize.1024.upload.xfer=1024

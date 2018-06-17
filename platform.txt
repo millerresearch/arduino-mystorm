@@ -26,5 +26,5 @@ tools.dfu-util.cmd=dfu-util
 tools.dfu-util.cmd.windows=dfu-util.exe
 tools.dfu-util.upload.params.verbose=-v
 tools.dfu-util.upload.params.quiet=
-tools.dfu-util.upload.pattern="{path}/{cmd}" -d 0483:df11 -a 0 -s 0x08000000:leave -t 1024 -D "{build.path}/{build.project_name}.bin"
+tools.dfu-util.upload.pattern="{path}/{cmd}" -d 0483:df11 -a 0 -s 0x08000000:leave -t {upload.xfer} -D "{build.path}/{build.project_name}.bin"
 
