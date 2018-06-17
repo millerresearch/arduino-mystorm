@@ -178,6 +178,12 @@ initVariant()
 	pinMode(PIN_MUX_OE, OUTPUT);
 	pinMode(PIN_MUX_S, OUTPUT);
 	pinMode(PIN_ICE40_CRST, OUTPUT);
+	// turn SL1 off
+	// (active high/low respectively for BlackIce/BlackIce II)
+	pinMode(LED_BUILTIN, INPUT);
+	int v = digitalRead(LED_BUILTIN);
+	pinMode(LED_BUILTIN, OUTPUT);
+	digitalWrite(LED_BUILTIN, v);
 	// SPI MUX enabled, connect LEDs
 	digitalWrite(PIN_MUX_OE, 0);
 	digitalWrite(PIN_MUX_S, 0);
