@@ -104,7 +104,7 @@ bool MyStorm::FPGAConfigure(Stream &str)
   do {
     lastread = millis();
     while (!str.available()) {
-      if (lastread - millis() > 1000)
+      if (millis() - lastread > 1000)
         return false;
     }
     buf[nbytes] = str.read();
